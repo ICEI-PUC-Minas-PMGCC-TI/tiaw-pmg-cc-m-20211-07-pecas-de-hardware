@@ -3,6 +3,7 @@
 // Disciplina: Trabalho Interdisciplinar - Aplicações Web
 // Professor: Rommel Vieira Carneiro (rommelcarneiro@gmail.com)
 //
+
 // Código LoginApp utilizado como exemplo para alunos de primeiro período 
 // Obtem os dados doo
 let login = document.getElementById('txt_login');
@@ -20,7 +21,7 @@ let cep = document.getElementById('txt_cep');
 function salvaLogin(event) {
     // Cancela a submissão do formulário para tratar sem fazer refresh da tela
     event.preventDefault();
-    
+
     // Obtem os dados do formulário
     let loginValue = login.value.trim();
     let nomeValue = nome.value.trim();
@@ -43,7 +44,7 @@ function salvaLogin(event) {
         return
     }
 
-    
+
 
     if (genreValue == '') {
         alert("Favor escolher um genero.");
@@ -65,7 +66,7 @@ function salvaLogin(event) {
         return
     }
 
-  
+
 
     if (loginValue == '') {
         alert("Login invalido.");
@@ -136,26 +137,39 @@ function generateUUID() { // Public Domain/MIT
 
 // Dados de usuários para serem utilizados como carga inicial
 const dadosIniciais = {
-    usuarios: [
+    "data": [
         {
-            "id": generateUUID(),
-            "login": "admin",
-            "senha": "123",
-            "nome": "Administrador do Sistema",
-            "sobrenome": "",
-            "email": "admin@abc.com",
-            "preco": "",
-            "genero": "",
-            "data": "",
-            "telefone": "",
-            "cep": "",
-            "sobre": "",
-            "sobretrab": ""
+            "id": 1,
+            "nome": "Marlene",
+            "sobrenome": "Silva",
+            "cep": "30520000",
+            "email": "marleneflor@gmail.com",
+            "celular": "3193334455",
+            "senha": "123456",
+            "status": ""
         },
-        { "id": generateUUID(), "login": "user", "senha": "123", "nome": "Usuario Comum", "email": "user@abc.com" },
+        {
+            "id": 2,
+            "nome": "Leonardo",
+            "sobrenome": "Gomes",
+            "cep": "30520000",
+            "email": "leonardo@gmail.com",
+            "celular": "3193334455",
+            "senha": "123456",
+            "status": ""
+        },
+        {
+            "id": 3,
+            "nome": "Paulo",
+            "sobrenome": "Batista",
+            "cep": "30520000",
+            "email": "paulo@gmail.com",
+            "celular": "3193334455",
+            "senha": "123456",
+            "status": ""
+        },
     ]
-};
-
+}
 
 // Inicializa o usuarioCorrente e banco de dados de usuários da aplicação de Login
 function initLoginApp() {
@@ -179,7 +193,7 @@ function initLoginApp() {
         db_usuariospecas = dadosIniciais;
 
         // Salva os dados iniciais no local Storage convertendo-os para string antes
-        localStorage.setItem('db_usuarios', JSON.stringify(dadosIniciais));
+        localStorage.setItem('db_usuariospecas', JSON.stringify(dadosIniciais));
     }
     else {  // Se há dados no localStorage
 
@@ -209,7 +223,7 @@ function addUser(nome, sobrenome, login, senha, email, genre, date, phone, cep) 
     db_usuariospecas.usuarios.push(usuario);
 
     // Salva o novo banco de dados com o novo usuário no localStorage
-    localStorage.setItem('db_usuarios', JSON.stringify(db_usuariospecas));
+    localStorage.setItem('db_usuariospecas', JSON.stringify(db_usuariospecas));
 }
 
 // Inicializa as estruturas utilizadas pelo LoginApp

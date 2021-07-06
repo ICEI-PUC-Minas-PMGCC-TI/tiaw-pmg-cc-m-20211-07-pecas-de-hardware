@@ -2,13 +2,13 @@ const dadosIniciais = {
     "data":
     {
         "id": 1,
-        "nome": "Leanne",
-        "sobrenome": "Graham",
-        "cep": "51346587",
-        "anonimato": "Sim",
-        "email": "Sincere@april.biz",
-        "celular": "1-770-736-8031",
-        "senha": "Leanne",
+        "nome": "Marlene",
+        "sobrenome": "Silva",
+        "cep": "30520000",
+        "email": "marleneflor@gmail.com",
+        "celular": "3193334455",
+        "senha": "123456",
+        "status": "",
 
     },
 };
